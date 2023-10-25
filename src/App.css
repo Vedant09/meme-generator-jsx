@@ -1,0 +1,107 @@
+.App {
+  align-items: center;
+  text-align: center;
+  width: 550px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.header{
+  background: linear-gradient(90deg, #1f8d73 1.14%, #18da86 100%);
+  width: 550px;
+height: 65px;
+flex-shrink: 0;
+display: flex;
+align-items: center;
+padding: 8px;
+
+}
+.tf{
+  width: 31.306px;
+height: 26.218px;
+flex-shrink: 0;
+}
+.memegen{
+  width: 140.792px;
+  color: rgb(16, 16, 16);
+font-family: Karla;
+font-size: 20.748px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2.075px;
+padding-right: 190px;
+}
+.rjs{
+  align-items: center;
+  width: 189px;
+height: 14px;
+flex-shrink: 0;
+  color: rgb(19, 19, 19);
+font-family: Karla;
+font-size: 20.748px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -2.075px;
+padding-bottom: 2px;
+}
+.form{
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 17px;
+  margin-bottom:20px;
+}
+.form-inputs{
+  border-radius: 5px;
+  text-indent: 5px;
+}
+.button{
+  grid-column: 1 / -1;
+  border-radius: 5px;
+background: linear-gradient(90deg, #1f8d73 1.14%, #18da86 100%);
+
+color: rgb(20, 19, 19);
+font-size: larger;
+font-weight: bold;
+}
+main{
+  padding: 36px;
+  
+}
+.meme-img{
+  
+  width: 477px;
+height: 268px;
+flex-shrink: 0;
+border-radius: 2px;
+background: lightgray 50% / cover no-repeat;
+}
