@@ -1,5 +1,4 @@
 import React from 'react'
-import memesData from '../memesData';
 import defaultImgd from "../images/spurs.png"
 
 export default function Meme(){
@@ -10,20 +9,24 @@ export default function Meme(){
         randomImage : defaultImgd
     })
 
-    const [allmeme,setAllMeme] = React.useState(memesData)
+    const [allmeme,setAllMeme] = React.useState([])
+
+    React.useEffect(()=>{
+        fetch("https://api.imgflip.com/get_memes")
+        .then(res => res.json())
+        .then(data => setAllMeme(data.data.memes))
+    },[])
+   
 
     function getMemeImage() {
-        
-        const meme = allmeme.data.memes
-        const randomnumber = Math.floor(Math.random() * meme.length)
-        const url = meme[randomnumber].url
+        const randomnumber = Math.floor(Math.random() * allmeme.length)
+        const url = allmeme[randomnumber].url
         setMemeImage(prevImage => ({
             ...prevImage,
             randomImage : url
         }))
     }
 
-    console.log(memeImage)
     function handleChange(event) {
         const {name, value} = event.target
         setMemeImage(prevMeme => ({
@@ -31,6 +34,9 @@ export default function Meme(){
             [name]: value
         }))
     }
+    function handleDownload() {
+        alert("Sorry.... Still Working on this")
+      }
     
     return(
         <main>
@@ -56,11 +62,14 @@ export default function Meme(){
                 />
                 <button className='button' onClick={getMemeImage} >Get A New Meme Image</button>
             </div>
-            <div className="meme">
+            <div className="meme" id = "imageContainer">
                 <img className="meme--image" src ={memeImage.randomImage} alt=''></img>
                 <h2 className="meme--text top">{memeImage.topText}</h2>
                 <h2 className="meme--text bottom">{memeImage.bottomText}</h2>
             </div>
+            <br />
+            <br />
+            <button className='button' onClick={handleDownload}>Download</button>
         </main>
     );
 }
